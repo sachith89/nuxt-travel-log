@@ -1,6 +1,9 @@
 name: Lint
 
-on: [push, pull_request]
+on:
+  pull_request:
+    branches:
+      - main
 
 jobs:
   lint:
@@ -12,7 +15,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22.x'
+          node-version: 22.x
 
       - name: Enable Corepack
         run: corepack enable
